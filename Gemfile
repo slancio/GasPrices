@@ -35,6 +35,9 @@ gem 'jbuilder', '~> 2.0'
 # Use madison to get state abbreviations/names
 gem 'madison'
 
+# Use friendly_id gem for named routes
+gem 'friendly_id', '~> 5.1.0'
+
 group :production do
   gem 'rails_12factor'
 end

@@ -14,13 +14,13 @@ class Price < ActiveRecord::Base
             presence: true,
             uniqueness: {
               scope: :created_at,
-              message: "State prices update once per day only"
+              message: "State prices update once per day only."
             }
   validates :created_at,
             presence: true,
             uniqueness: {
               scope: :state_id,
-              message: "State prices update once per day only" 
+              message: "State prices update once per day only." 
             }
   validates :price,
             presence: true,
