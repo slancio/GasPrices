@@ -32,6 +32,9 @@ gem 'jbuilder', '~> 2.0'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# Use madison to get state abbreviations/names
+gem 'madison'
+
 group :production do
   gem 'rails_12factor'
 end
