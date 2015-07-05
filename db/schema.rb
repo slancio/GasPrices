@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150705214742) do
+ActiveRecord::Schema.define(version: 20150705220019) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,8 @@ ActiveRecord::Schema.define(version: 20150705214742) do
     t.datetime "created_at",                         null: false
     t.datetime "updated_at",                         null: false
   end
+
+  add_index "prices", ["state_id", "created_at"], name: "index_prices_on_state_id_and_created_at", unique: true, using: :btree
 
   create_table "states", force: :cascade do |t|
     t.string   "name",       null: false

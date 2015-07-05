@@ -10,4 +10,25 @@
 #
 
 class Price < ActiveRecord::Base
+  validates :state_id,
+            presence: true,
+            uniqueness: {
+              scope: :created_at,
+              message: "State prices update once per day only"
+            }
+  validates :created_at,
+            presence: true,
+            uniqueness: {
+              scope: :state_id,
+              message: "State prices update once per day only" 
+            }
+  validates :price,
+            presence: true,
+            numericality: { greater_than: 0 },
+            format: {
+              with: /[0-9]+\.[0-9]{3}/,
+              message: "Prices should contain three decimal precision."
+            }
+
+  belongs_to :state
 end
