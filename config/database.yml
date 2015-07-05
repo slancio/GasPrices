@@ -78,8 +78,8 @@ test:
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
-production:
-  <<: *default
-  database: GasPrices_production
-  username: GasPrices
-  password: <%= ENV['GASPRICES_DATABASE_PASSWORD'] %>
+# production:
+#   <<: *default
+#   database: GasPrices_production
+#   username: GasPrices
+#   password: <%= ENV['GASPRICES_DATABASE_PASSWORD'] %>
