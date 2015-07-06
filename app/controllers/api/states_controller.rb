@@ -12,7 +12,7 @@ module Api
         @state = State.friendly.find(params[:id])
         render :show
       else
-        render text: "Unable to find state wit '#{params[:id]}'.\nCheck your spelling and parameterize the name (e.g., 'new-york' for New York).", status: 404
+        render json: { error: "Unable to find state with '#{params[:id]}'.\nTry the lowercase abbreviation of the name (e.g., 'ny' for New York)." }, status: :unprocessable_entity
       end
     end
 

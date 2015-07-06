@@ -29,7 +29,7 @@ class State < ActiveRecord::Base
 
   def slug_candidates
     [
-      :name,
+      Madison.get_abbrev(self.name),
     ]
   end
 
