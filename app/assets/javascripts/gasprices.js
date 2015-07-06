@@ -1,7 +1,7 @@
 ;(function () {
   "use strict";
 
-  var apiURL = "http://ejsgasprices.com/api/states/";
+  var apiURL = "http://ejsgasprices.herokuapp.com/api/states/";
 
   function fetchJSON(url, callback) {
     var req = new XMLHttpRequest();
