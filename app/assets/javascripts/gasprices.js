@@ -11,25 +11,13 @@
         if (req.status == 200) {
           callback(JSON.parse(req.responseText));
         } else {
-          console.log('Error' + req.status);
+          console.log('Error ' + req.status);
         }
       }
     };
 
     req.open("GET", url, true);
     req.send();
-  }
-
-  function displayPriceData(data) {
-    insertAtId('gas-state', data.states.name);
-    insertAtId('gas-price', "$" + data.states.current_price + "/gal");
-    displayLastUpdated(data);
-  }
-
-  function displayLastUpdated(priceData) {
-    var dateString = new Date(Date.parse(priceData.last_updated));
-    dateString = dateString.toUTCString().split(' ').splice(0, 4).join(' ');
-    insertAtId('gas-date', dateString);
   }
 
   function buildStateList(JSONdata) {
@@ -49,6 +37,18 @@
   function getStateData(stateList) {
     var selectedState = stateList.options[stateList.selectedIndex].value;
     fetchJSON(apiURL + "/" + selectedState, displayPriceData);
+  }
+
+  function displayLastUpdated(priceData) {
+    var dateString = new Date(Date.parse(priceData.last_updated));
+    dateString = dateString.toUTCString().split(' ').splice(0, 4).join(' ');
+    insertAtId('gas-date', dateString);
+  }
+
+  function displayPriceData(data) {
+    insertAtId('gas-state', data.states.name);
+    insertAtId('gas-price', "$" + data.states.current_price + "/gal");
+    displayLastUpdated(data);
   }
 
   function insertAtId(id, content) {
