@@ -12,4 +12,5 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require gasprices
 //= require_tree .

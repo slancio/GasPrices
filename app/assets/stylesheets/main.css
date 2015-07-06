@@ -1,0 +1,26 @@
+.gas-info {
+  font-size: 16px;
+  font-weight: 400;
+  text-align: center;
+}
+
+h1, h2, h3 {
+  font-weight: 700;
+  padding: 10px;
+}
+
+.gas-info > h1 > span {
+  font-size: 72px;
+}
+
+.gas-info > h2 > span {
+  font-size: 44px;
+}
+
+.gas-info > h3 > span {
+  font-size: 36px;  
+}
+
+span {
+  padding: 0 5px;
+}
