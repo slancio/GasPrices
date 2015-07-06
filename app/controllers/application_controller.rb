@@ -13,8 +13,9 @@ class ApplicationController < ActionController::Base
 
         # Create updated Prices for each state already in the database
         State.all.each do |state|
-          state.prices.create(price: price_data[state.name].sub('$', ''))
-          price_data.delete[state.name]
+          state.prices.create(price: price_data[state.name].sub('$', ''),
+                              created_at: Date.today)
+          price_data.delete(state.name)
         end
 
         # Create a state and price with remaining data...
@@ -22,7 +23,8 @@ class ApplicationController < ActionController::Base
         # works without changing any code. Just update Madison gem.
         price_data.each do |state, price|
           new_state = State.create(name: state)
-          new_state.prices.create(price: price.sub('$', ''))
+          new_state.prices.create(price: price.sub('$', ''),
+                                  created_at: Date.today)
         end
 
       end

@@ -41,6 +41,10 @@ gem 'friendly_id', '~> 5.1.0'
 # Custom error logging in case scraping fails
 gem 'multi_logger'
 
+# rest-client & nokogiri for scraping websites
+gem 'rest-client'
+gem 'nokogiri'
+
 group :production do
   gem 'rails_12factor'
 end

@@ -17,6 +17,8 @@ class State < ActiveRecord::Base
 
   has_many :prices, dependent: :destroy
 
+  attr_reader :current_price
+
   def self.current_prices
     Price.where('created_at = ?', Date.today)
   end
@@ -28,8 +30,6 @@ class State < ActiveRecord::Base
   def slug_candidates
     [
       :name,
-      self.name.downcase,
-      Madison.get_abbrev(self.name)
     ]
   end
 

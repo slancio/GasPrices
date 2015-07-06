@@ -1,0 +1,1 @@
+json.partial! "api/states/state", collection: @states, as: :state

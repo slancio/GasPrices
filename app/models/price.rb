@@ -26,8 +26,8 @@ class Price < ActiveRecord::Base
             presence: true,
             numericality: { greater_than: 0 },
             format: {
-              with: /[0-9]+\.[0-9]{3}/,
-              message: "Prices should contain three decimal precision."
+              with: /[0-9]+\.[0-9]/,
+              message: "Prices should be in decimal format."
             }
 
   belongs_to :state
