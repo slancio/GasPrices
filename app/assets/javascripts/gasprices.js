@@ -1,7 +1,7 @@
 ;(function () {
   "use strict";
 
-  var apiURL = "http://localhost:3000/api/states/";
+  var apiURL = "http://ejsgasprices.com/api/states/";
 
   function fetchJSON(url, callback) {
     var req = new XMLHttpRequest();
