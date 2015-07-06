@@ -38,6 +38,9 @@ gem 'madison'
 # Use friendly_id gem for named routes
 gem 'friendly_id', '~> 5.1.0'
 
+# Custom error logging in case scraping fails
+gem 'multi_logger'
+
 group :production do
   gem 'rails_12factor'
 end

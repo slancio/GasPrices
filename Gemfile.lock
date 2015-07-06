@@ -78,6 +78,8 @@ GEM
     mini_portile (0.6.2)
     minitest (5.7.0)
     multi_json (1.11.2)
+    multi_logger (0.1.0)
+      railties
     nokogiri (1.6.6.2)
       mini_portile (~> 0.6.0)
     pg (0.18.2)
@@ -160,6 +162,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   madison
+  multi_logger
   pg
   pry-rails
   rails (= 4.2.1)
